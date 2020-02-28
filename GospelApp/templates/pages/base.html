@@ -1,0 +1,110 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'static/style/style.css' %}">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gospel News</title>
+  <link rel="stylesheet" type="text/css" href=" {% static 'style/css/bootstrap-grid.css' %}">
+  <link rel="stylesheet" type="text/css" href=" {% static 'style/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+  <section id="home">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" class="nav justify-content-center">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'articlepage' %}">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'bookpage' %}">Book Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Videos">Videos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">DONATE</button>
+        </form>
+      </div>
+    </nav>
+  </section>
+  {% block body %}
+
+  {% endblock %}
+  <section id="footer">
+    <div class="footer">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 Social-media">
+              <h2>TGC</h2>
+
+              The Gospel Coalition helps people know God's Word with their mind, love God fully with their heart,
+              and engage the world with grace and truth.
+
+            </div>
+            <div class="col-md-4 Social-media">
+              <h3>Contact</h3>
+              <h6> Kigali-Rwanda<br>
+                Tel:(+250)789181732
+                Email:mukizagsteven@gmail.com
+              </h6>
+            </div>
+            <div class="col-md-4 Social-media text-center">
+              <h4>Social Media</h4>
+              <a href=""><img src="{% static 'images/fa.png' %}"></a>
+              <a href=""><img src="{% static 'images/twi.png' %}"></a>
+              <a href=""><img src="{% static 'images/ins.png' %}"></a>
+              <a href=""><img src="{% static 'images/in.png' %}"></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

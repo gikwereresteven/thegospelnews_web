@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navbar{
+    background-color: gray;
+    color:white;
+}
+.carousel-item img{
+height: 75vh;
+background-size: cover;
+background-position: center;
+}
+
+.container h1{
+    color: rgb(8, 0, 0);
+    font-weight: 600;
+    margin: 40px;
+}
+.article-row a{
+color: #000;
+}
+.article_images img{
+width: 50%;
+border-radius: 50%;
+}
+#about{
+    background-color: rgb(219, 219, 219);
+}
+.about-image img{
+    width: 400px;
+    margin: 30px;
+}
+.values-about img{
+    border-radius: 90%;
+    margin: 50px;
+    margin-bottom:20px;
+}
+.Mission h4{
+    color:#12AC97;
+}
+.Values h4{ 
+    color: #D96700;
+}
+
+.Vision h4{
+    color:#85A936;
+}
+#book{
+    background-color:	rgba(226, 184, 15, 0.904);
+    margin-top: 30px;
+   padding-bottom: 30px;
+}
+.books-read img{
+    width: 90%;
+    height: 45%;
+}
+.books-read p{
+    padding: 20px;
+
+}
+
+.container .book-detail{
+    padding: 40px 0 1px;
+    width: 100%;
+    word-break: break-all !important;
+}
+
+.container .book-detail p{
+    text-align: justify;
+    text-justify: inter-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: break-spaces;
+
+}
+.books-read{
+    margin-top: 20px;
+}
+.books-read h4 a{
+    color:#fff;
+}
+
+.books-read h4{
+    padding-top: 30px;
+}
+.book-title{
+    position: relative;
+ }
+.book-title h3{
+   font-weight: 600;
+   padding-top: 30px;
+   flex: content;
+   justify-content: center;
+   align-items: center;
+}
+#contact{
+    background-color: rgba(252, 249, 249, 0.932);
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+.contact-tile h3{
+    font-weight: 600;
+    padding-top: 30px;
+    text-align: center;
+    padding-bottom: 20px;   
+}
+#Videos{
+    padding-bottom: 30px;
+}
+.videos-size{
+    width: 50%;
+    border-radius:20px;
+}
+.videos-size h5 a{
+    margin-top: 30px;
+}
+.videos-size h5{
+    margin-top: 30px;
+}
+.image-book{
+    width: 100%;
+}
+.video-rows h5 a{
+    padding-top: 30px; 
+}
+#footer{
+    background-color: dimgrey;
+}
+.Social-media img{
+    width: 10%;
+    padding-top: 5px;
+}
+/*  */
+.Social-media{
+    padding-bottom: 100px;
+    padding-top:50px;
+    color:white;
+}
+.contact-form{
+    position:relative;
+    padding-bottom: 50px;
+}
+.Social-media h3{
+    margin-left: 100px;
+}

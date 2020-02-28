@@ -1,0 +1,51 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+<section id="articles">
+  <div class="container">
+    <div class="contact-tile">
+      <br>
+
+      <h3>ARTICLES</h3>
+    </div>
+    <p></p>
+
+    <div class="row bookarticles">
+      {% if articlepage %}
+      {% for art in articlepage %}
+
+      <div class="col-md-2">
+
+      </div>
+
+      <div class="col-md-2 article_images">
+       
+        <img src="{{ art.photo.url }}">
+
+      </div>
+
+      <div class="col-md-8 article-row">
+       
+        <a href="{% url 'article' pk=art.pk %}">
+          <h4> {{ art.book_title }} </h4>
+          <h5>{{ art.author }} | {{art.date_posted}}</h5>
+        </a>
+        {{ art.book_summary }}
+       
+        <hr>
+        
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+    
+  </div>
+ 
+</section>
+
+
+{% endblock %}
+  

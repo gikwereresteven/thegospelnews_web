@@ -1,69 +1,235 @@
+{% extends 'pages/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Gospel News</title>
 
-  <script src="{% static 'style/js/jquery-3.3.1.min.js' %}"></script>
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="static/style/js/bootstrap.min.js"></script>
+{% block body %}
 
-  <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap-grid.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap-grid.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    </head>
-    <body>
-        <section id="nav-bar">
-            <nav class="navbar navbar-expand-lg navbar-light ">
-              <a class="navbar-brand" href="">{% load static %}
-                <img src="{% static 'images/carental.png' %}" title="Carental Logo"></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/back.jpg'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+
+        <h1>WELCOME TO THIS SITE SECOND!</h1>
+        <p>WELCOME TO THIS SITE SECOND!</p>
+
+      </div>
+    </div>
+    <div class="carousel-item">
+
+      <img src="{% static 'images/bg.png'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+
+        <h1>WELCOME TO THIS SITE FIRST SLIDE!</h1>
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/jz.png'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+
+        <h1>WELCOME TO THIS SITE THIRD!</h1>
+
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</section>
+
+<!-------------------------------------------- Articles ------------------------------------>
+
+<section id="articles">
+  <div class="container">
+    <div class="contact-tile">
+      <br>
+
+      <h3>ARTICLES</h3>
+    </div>
+    <p></p>
+
+    <div class="row bookarticles">
+      {% if article %}
+      {% for art in article %}
+
+      <div class="col-md-2">
+
+      </div>
+
+      <div class="col-md-2 article_images">
+       
+        <img src="{{ art.photo.url }}">
+
+      </div>
+
+      <div class="col-md-8 article-row">
+       
+        <a href="{% url 'article' pk=art.pk %}">
+          <h4> {{ art.book_title }} </h4>
+          <h5>{{ art.author }} | {{art.date_posted}}</h5>
+        </a>
+        {{ art.book_summary }}
+       
+        <hr>
         
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="">Home </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="">Sites</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="">Cars</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="">Contact</a>
-                  </li>
-                </ul>
-                <ul class="navbar-nav navbar-right">
-        
-                  <form class="form-inline my-2 my-lg-0">
-                    <button type="submit" class="btn btn-light btn-block" id="btnsignin">
-                      <a href=""> DONATE </a>
-                    </button>
-                  </form>
-                  <!-- <form class="form-inline my-2 my-lg-2">
-                    <button type="submit" class="btn btn-block" id="btnsignup">
-                      <a href=""> Sign Up </a>
-                    </button>
-                  </form> -->
-                </ul>
-        
-              </div>
-            </nav>
-          </section>
-        
-        
-         </body>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+    
+  </div>
+ 
+</section>
+
+<!--------------------------------------------  Books ------------------------------------>
+
+<section id="book">
+  <div class="container text-center">
+    <div class="book-title">
+      <h3>Books Review</h3>
+    </div>
+    <div class="row books-image">
+      {% if book %}
+      {% for bk in book %}
+      <div class="col-md-4 books-read">
+        <img src="{{ bk.book_photho.url }}">
+
+        <h4><a href="{% url 'books' pk=bk.pk %}"> {{ bk.book_title }} </a></h4>
+        <h5>{{bk.book_author}}</h5><br>
+        <i>{{ bk.book_summary }}</i>
+
+      </div>
+      {% endfor %}
+      {% endif %}
+
+    </div>
+  </div>
+  </div>
+
+</section>
+
+<!-------------------------------------------- Videos Section ------------------------------------>
+<section id="Videos">
+  <div class="container text-center">
+    <div class="book-title">
+      <h3>Our Videos</h3>
+    </div>
+    <div class="row video-rows">
+      {% if video %}
+      {% for vdo in video %}
+      <div class="col-md-4 books-read">
+
+        <video width="250" height="180" controls>
+          <source src='{{ MEDIA_URL }}{{ vdo.Video.url }}' type='video/mp4'>
+        </video>
+        <h5><a href="{% url 'video' pk=vdo.pk %}">{{ vdo.video_title }}</a></h5>
+        {{ vdo.name }}</h3>
+      </div>
+      {% endfor %}
+      {% endif %}
+
+    </div>
+
+</section>
+
+<!-------------------------------------------- About ------------------------------------>
+
+<section id="about">
+  <div class="container">
+    <div class="row about-row">
+      {% if about %}
+      {% for ab in about %}
+      <div class="col-md-6 about-image">
+        <img src=" {{ ab.picture.url }} ">
+      </div>
+      <div class="col-md-6">
+        <h1>{{ ab.title }}
+          <hr>
+        </h1>
+
+        <i>{{ ab.content }}</i>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+    <div class="row values-about text-center">
+      {% if value %}
+      {% for val in value %}
+      <div class="col-md-4 Mission">
+        <!-- <img src="{% static '{{ val.logo }}' %}"> -->
+        <img src="{{ val.logo.url }}" />
+        <h4>
+          <p> {{ val.title }}</p>
+        </h4>
+        <p>{{ val.context }}</p>
+      </div>
+
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+
+<!-------------------------------------------- Contact Section ------------------------------------>
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md-6 contact-form">
+        <div class="contact-tile">
+          <h3>CONTACT US</h3>
+        </div>
+        <form lass="post-form" action="" method="POST">{% csrf_token %}
+          <div class="form-group">
+
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              name="firstname" placeholder="First Name" required>
+
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputPassword1">Last Name</label> -->
+            <input type="text" class="form-control" id="exampleInputPassword1" name="lastname" placeholder="Last Name"
+              required>
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputPassword1">Email Adress</label> -->
+            <input type="email" class="form-control" id="exampleInputPassword1" name="email" placeholder="Email"
+              required>
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputPassword1">Email Adress</label> -->
+
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"
+              placeholder="Write Your message here:">
+
+              </textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+      <div class="col-md-3">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+{% endblock %}
 
 </html>

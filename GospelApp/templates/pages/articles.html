@@ -1,0 +1,38 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="post">
+        <br>
+        {% if article.book_title %}
+        <div class="date">
+            {{ article.author }}
+        </div>
+        {% endif %}
+        <h2>{{ article.book_title }}</h2>
+        <p> <b>{{ article.author }} | {{ article.date_posted|linebreaksbr }}</b></p>
+        <p> {{article.book_summary}} </p>
+        <div class="container">
+        <p> {{article.article_detail}} </p>
+    </div>
+
+       
+
+    </div>
+</div>
+{% endblock %}
+  
+</body>
+
+</html>
+

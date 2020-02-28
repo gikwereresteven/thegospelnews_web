@@ -1,0 +1,33 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+<section id="book">
+    <div class="container text-center">
+      <div class="book-title">
+        <h3>Books Review</h3>
+      </div>
+      <div class="row books-image">
+        {% if bookp %}
+        {% for bk in bookp %}
+        <div class="col-md-4 books-read">
+          <img src="{{ bk.book_photho.url }}">
+  
+          <h4><a href="{% url 'books' pk=bk.pk %}"> {{ bk.book_title }} </a></h4>
+          <h5>{{bk.book_author}}</h5><br>
+          <i>{{ bk.book_summary }}</i>
+  
+        </div>
+        {% endfor %}
+        {% endif %}
+  
+      </div>
+    </div>
+    </div>
+  
+  </section>
+
+{% endblock %}
+  
